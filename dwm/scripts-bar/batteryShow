@@ -1,4 +1,0 @@
-#!/bin/bash
-
-sts=$(neofetch battery)
-echo ${sts:10:3} 

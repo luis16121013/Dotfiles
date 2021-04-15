@@ -1,0 +1,5 @@
+#!/bin/sh
+
+unlink $HOME/.config/.xinitrc
+unlink $HOME/.config/alacritty
+unlink $HOME/.config/nvim
