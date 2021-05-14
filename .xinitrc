@@ -35,11 +35,11 @@ fi
 nitrogen --restore &
 picom &
 
-while true; do
-    bat="$(cat /sys/class/power_supply/BAT0/capacity)"
-    dat="$(date '+%H:%M')"
-    xsetroot -name "$bat | $dat"
-    sleep 1m
-done &
+#while true; do
+#    bat="$(cat /sys/class/power_supply/BAT0/capacity)"
+#    dat="$(date '+%H:%M')"
+#    xsetroot -name "$bat | $dat"
+#    sleep 1m
+#done &
 
-exec dwm
+exec bspwm

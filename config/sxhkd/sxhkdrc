@@ -1,14 +1,10 @@
-#
-# wm independent hotkeys
-#
-
 # terminal emulator
 super + Return
 	alacritty
 
 # program launcher
 super + @space
-	dmenu_run
+	rofi -show drun
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -19,14 +15,14 @@ super + Escape
 #
 super + e
 	pcmanfm
-
 super + p
 	pavucontrol
-
 super + z
 	firefox
 super + x
 	google-chrome-stable
+super + o
+	ksnip
 
 # quit/restart bspwm
 super + alt + {q,r}
