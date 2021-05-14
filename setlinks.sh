@@ -13,6 +13,15 @@ path=$(pwd)
 routeDotfile=$path/config
 routeLink=$HOME/.config
 
+#DOWNLOAD CONFIGURATIONS
+git clone $github/alacrittyConfig.git $routeDotfile/alacritty
+git clone $github/myConfigNvim.git $routeDotfile/nvim
+git clone $github/wallpapers.git
+git clone https://aur.archlinux.org/yay-git.git $HOME/yay-git
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 [ -d $routeLink/alacritty ] && rm -rf $routeLink/alacritty
 ln -sf $routeDotfile/alacritty $routeLink/alacritty
 
@@ -27,4 +36,9 @@ ln -sf $routeDotfile/sxhkd $routeLink/sxhkd
 
 [ -d $routeLink/rofi ] && rm -rf $routeLink/rofi
 ln -sf $routeDotfile/rofi $routeLink/rofi
+
+#HOME DIRECTORY
+ln -sf $path/.xinitrc $HOME/.xinitrc
+ln -sf $path/.zshrc $HOME/.zshrc
+ln -sf $path/.bashrc $HOME/.bashrc
 

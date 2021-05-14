@@ -9,14 +9,6 @@
 # Email: luispfcanales@gmail.com
 # Twitter: @luispfcanales
 
-path=$(pwd)
-routeDotfile=$path/config
-routeLink=$HOME/.config
-
-#REPOSITORY
-github="https://github.com/luis16121013"
-gitlab="https://gitlab.com/luispf"
-
 #DOWNLOADS PROGRAMS
 sudo pacman -S xf86-video-nouveau --noconfirm
 sudo pacman -S xorg --noconfirm
@@ -35,6 +27,7 @@ sudo pacman -S bspwm --noconfirm
 sudo pacman -S sxhkd --noconfirm
 sudo pacman -S exa --noconfirm
 sudo pacman -S bat --noconfirm
+sudo pacman -S alacritty --noconfirm
 sudo pacman -S ksnip --noconfirm
 sudo pacman -S gedit --noconfirm
 sudo pacman -S nitrogen --noconfirm
@@ -42,33 +35,10 @@ sudo pacman -S pcmanfm --noconfirm
 sudo pacman -S rofi --noconfirm
 sudo pacman -S ttf-jetbrains-mono --noconfirm
 
-#DOWNLOAD CONFIGURATIONS
-git clone $github/alacrittyConfig.git $routeDotfile/alacritty
-git clone $github/myConfigNvim.git $routeDotfile/nvim
-git clone $github/wallpapers.git
-git clone https://aur.archlinux.org/yay-git.git $HOME/yay-git
-
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-#CONFIG DIRECTORY
-[ -d $routeLink/alacritty ] && rm -rf $routeLink/alacritty
-ln -sf $routeDotfile/alacritty $routeLink/alacritty
-
-[ -d $routeLink/nvim ] && rm -rf $routeLink/nvim
-ln -sf $routeDotfile/nvim $routeLink/nvim
-
-[ -d $routeLink/bspwm ] && rm -rf $routeLink/bspwm
-ln -sf $routeDotfile/bspwm $routeLink/bspwm
-
-[ -d $routeLink/sxhkd ] && rm -rf $routeLink/sxhkd
-ln -sf $routeDotfile/sxhkd $routeLink/sxhkd
-
-[ -d $routeLink/rofi ] && rm -rf $routeLink/rofi
-ln -sf $routeDotfile/rofi $routeLink/rofi
-
-#HOME DIRECTORY
-ln -sf $path/.xinitrc $HOME/.xinitrc
-ln -sf $path/.zshrc $HOME/.zshrc
-ln -sf $path/.bashrc $HOME/.bashrc
+if [[ -d $HOME/.config ]]; then
+	./setlinks.sh
+else
+	mkdir $HOME/.config
+	./setlinks.sh
+fi
 
