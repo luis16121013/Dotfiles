@@ -46,7 +46,7 @@ sudo pacman -S ttf-jetbrains-mono --noconfirm
 git clone $github/alacrittyConfig.git $routeDotfile/alacritty
 git clone $github/myConfigNvim.git $routeDotfile/nvim
 git clone $github/wallpapers.git
-git clone https://aur.archlinux.org/yay-git.git $HOME/
+git clone https://aur.archlinux.org/yay-git.git $HOME/yay-git
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
