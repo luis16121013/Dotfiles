@@ -34,6 +34,7 @@ sudo pacman -S nitrogen --noconfirm
 sudo pacman -S pcmanfm --noconfirm
 sudo pacman -S rofi --noconfirm
 sudo pacman -S ttf-jetbrains-mono --noconfirm
+sudo pacman -S firefox --noconfirm
 
 if [[ -d $HOME/.config ]]; then
 	./setlinks.sh

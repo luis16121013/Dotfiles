@@ -37,8 +37,17 @@ ln -sf $routeDotfile/sxhkd $routeLink/sxhkd
 [ -d $routeLink/rofi ] && rm -rf $routeLink/rofi
 ln -sf $routeDotfile/rofi $routeLink/rofi
 
+[ -d $routeLink/polybar ] && rm -rf $routeLink/polybar
+ln -sf $routeDotfile/polybar $routeLink/polybar
+
 #HOME DIRECTORY
 ln -sf $path/.xinitrc $HOME/.xinitrc
 ln -sf $path/.zshrc $HOME/.zshrc
 ln -sf $path/.bashrc $HOME/.bashrc
+
+cd $HOME/yay-git
+makepkg -si
+
+yay -S polybar
+yay -S google-chrome
 
