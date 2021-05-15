@@ -12,6 +12,7 @@
 path=$(pwd)
 routeDotfile=$path/config
 routeLink=$HOME/.config
+github="https://github.com/luis16121013"
 
 #DOWNLOAD CONFIGURATIONS
 git clone $github/alacrittyConfig.git $routeDotfile/alacritty
